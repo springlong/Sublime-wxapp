@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<radio value="${1}" checked="${2:false}"/>${3}
+]]></content>
+	<tabTrigger>radio</tabTrigger>
+    <description>wxapp:tag (radio)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

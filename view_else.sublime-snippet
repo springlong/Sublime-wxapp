@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<view wx:else="{{ ${1} }}">
+	${2}
+</view>
+]]></content>
+	<tabTrigger>viewelse</tabTrigger>
+    <description>wxapp:tag (view:else)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

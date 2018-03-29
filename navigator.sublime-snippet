@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<navigator url="${1}" hover-class="${2}" ${3:redirect}>${4}</navigator>
+]]></content>
+	<tabTrigger>navigator</tabTrigger>
+    <description>wxapp:tag (navigator)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

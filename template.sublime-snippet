@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<template name="${1}" is="${2}">
+	${3}
+</template>
+]]></content>
+	<tabTrigger>template</tabTrigger>
+    <description>wxapp:tag (template)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

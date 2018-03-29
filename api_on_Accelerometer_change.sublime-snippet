@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+wx.onAccelerometerChange(function(res) {
+	${1:console.log(res.x)  // x轴
+	console.log(res.y)  // y轴
+	console.log(res.z)  // z轴}
+})
+]]></content>
+	<tabTrigger>wx.onAccelerometerChange</tabTrigger>
+	<description>(监听加速度数据，频率：5次/秒)</description>
+	<scope>source.js</scope>
+</snippet>

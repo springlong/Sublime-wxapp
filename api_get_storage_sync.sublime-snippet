@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.getStorageSync('${1}')
+]]></content>
+	<tabTrigger>wx.getStorageSync</tabTrigger>
+	<description>(本地缓存:获取数据-同步)</description>
+	<scope>source.js</scope>
+</snippet>

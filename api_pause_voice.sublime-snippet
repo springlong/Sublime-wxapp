@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.pauseVoice()
+]]></content>
+	<tabTrigger>wx.pauseVoice</tabTrigger>
+	<description>(暂停正在播放的语音)</description>
+	<scope>source.js</scope>
+</snippet>

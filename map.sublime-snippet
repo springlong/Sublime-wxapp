@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<map longitude="${1}" latitude="${2}" markers="${3}" covers="${4}" ${5:scale="${6}"}></map>
+]]></content>
+	<tabTrigger>map</tabTrigger>
+    <description>wxapp:tag (map)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

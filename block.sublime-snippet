@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<block>
+	${1}
+</block>
+]]></content>
+	<tabTrigger>block</tabTrigger>
+    <description>wxapp:tag (block)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

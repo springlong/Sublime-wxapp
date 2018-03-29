@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<form ${1:bindsubmit="${2:formSubmit}"} ${3:bindreset="${4:formReset}"}>
+	${5}
+</form>
+]]></content>
+	<tabTrigger>form</tabTrigger>
+    <description>wxapp:tag (form)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

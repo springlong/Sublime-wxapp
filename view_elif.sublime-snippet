@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<view wx:elif="{{ ${1} }}">
+	${2}
+</view>
+]]></content>
+	<tabTrigger>viewelif</tabTrigger>
+    <description>wxapp:tag (view:elif)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+wx.login({
+	success: function(res) {
+		${1}
+	},
+	fail: function(res) {
+		${2}
+	},
+	complete: function(res) {
+		${3}
+	}
+})
+]]></content>
+	<tabTrigger>wx.login</tabTrigger>
+	<description>(调用接口wx.login()获取临时登录凭证)</description>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<view class="${1}">
+	${2}
+</view>
+]]></content>
+	<tabTrigger>viewclass</tabTrigger>
+    <description>wxapp:tag (view:class)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

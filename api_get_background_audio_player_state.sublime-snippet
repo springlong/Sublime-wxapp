@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.getBackgroundAudioManager()
+]]></content>
+	<tabTrigger>wx.getBackgroundAudioPlayerState</tabTrigger>
+    <description>(获取全局唯一的背景音频管理器)</description>
+    <scope>source.js</scope>
+</snippet>

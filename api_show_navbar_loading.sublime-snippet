@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.showNavigationBarLoading()
+]]></content>
+	<tabTrigger>wx.showNavigationBarLoading</tabTrigger>
+	<description>(在当前页面显示导航条加载动画)</description>
+	<scope>source.js</scope>
+</snippet>

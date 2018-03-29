@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+wx.getSavedFileList({
+	success: function (res) {
+		${1:console.log(res.fileList)}
+	},
+	fail: function (res) {
+		${2}
+	},
+	complete: function (res) {
+		${3}
+	}
+})
+]]></content>
+	<tabTrigger>wx.getSavedFileList</tabTrigger>
+	<description>(获取本地已保存的文件列表)</description>
+	<scope>source.js</scope>
+</snippet>

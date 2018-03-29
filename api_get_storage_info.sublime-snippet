@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+wx.getStorageInfo({
+	success: function(res) {
+		${1:console.log(res.keys)  // 当前storage中所有的key
+		console.log(res.currentSize)  // 当前占用的空间大小, 单位kb
+		console.log(res.limitSize)  // 限制的空间大小，单位kb}
+	},
+	fail: function (res) {
+		${2}
+	},
+	complete: function (res) {
+		${3}
+	}
+})
+]]></content>
+	<tabTrigger>wx.getStorageInfo</tabTrigger>
+	<description>(本地缓存:相关信息-异步)</description>
+	<scope>source.js</scope>
+</snippet>

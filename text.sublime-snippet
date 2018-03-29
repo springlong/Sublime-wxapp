@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<text>{{ ${1} }}</text>
+]]></content>
+	<tabTrigger>text</tabTrigger>
+    <description>wxapp:tag (text)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>
