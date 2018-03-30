@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<block wx:for="{{ ${1} }}" wx:for-index="${2:idx}" wx:for-item="${3:value}">
+	${4}
+</block>
+]]></content>
+	<tabTrigger>blockforfor</tabTrigger>
+    <description>wxapp:tag (block:for)</description>
+    <scope>text.html(.wxml)</scope>
+</snippet>

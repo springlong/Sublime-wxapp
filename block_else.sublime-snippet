@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-<block wx:else="{{ ${1} }}">
-	${2}
+<block wx:else>
+	${1}
 </block>
 ]]></content>
 	<tabTrigger>blockelse</tabTrigger>

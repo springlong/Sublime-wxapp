@@ -4,7 +4,7 @@
 	${2}
 </block>
 ]]></content>
-	<tabTrigger>blockelif</tabTrigger>
+	<tabTrigger>blockelseif</tabTrigger>
     <description>wxapp:tag (block:elif)</description>
     <scope>text.html(.wxml)</scope>
 </snippet>
