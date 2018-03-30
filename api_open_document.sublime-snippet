@@ -14,6 +14,6 @@ wx.openDocument({
 })
 ]]></content>
 	<tabTrigger>wx.openDocument</tabTrigger>
-	<description>(新开页面打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx)</description>
+	<description>(新开页面打开文档)</description>
 	<scope>source.js</scope>
 </snippet>

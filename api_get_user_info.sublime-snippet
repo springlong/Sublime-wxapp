@@ -21,6 +21,6 @@ wx.getUserInfo({
 })
 ]]></content>
 	<tabTrigger>wx.getUserInfo</tabTrigger>
-	<description>(获取用户信息，withCredentials 为 true 时需要先调用 wx.login 接口)</description>
+	<description>(获取用户信息)</description>
 	<scope>source.js</scope>
 </snippet>

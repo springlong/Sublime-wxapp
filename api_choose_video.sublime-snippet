@@ -20,6 +20,6 @@ wx.chooseVideo({
 })
 ]]></content>
 	<tabTrigger>wx.chooseVideo</tabTrigger>
-	<description>(拍摄视频或从手机相册中选视频，返回视频的临时文件路径)</description>
+	<description>(拍摄视频或从手机相册中选视频)</description>
 	<scope>source.js</scope>
 </snippet>
