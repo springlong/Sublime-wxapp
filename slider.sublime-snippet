@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>slider</tabTrigger>
     <description>wxapp:tag (slider)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

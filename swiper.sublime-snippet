@@ -10,5 +10,5 @@
 ]]></content>
 	<tabTrigger>swiper</tabTrigger>
     <description>wxapp:tag (swiper)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

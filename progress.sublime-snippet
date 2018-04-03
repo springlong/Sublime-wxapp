@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>progress</tabTrigger>
     <description>wxapp:tag (progress)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

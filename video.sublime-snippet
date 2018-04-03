@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>video</tabTrigger>
     <description>wxapp:tag (video)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

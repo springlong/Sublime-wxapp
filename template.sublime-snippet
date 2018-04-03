@@ -6,5 +6,5 @@
 ]]></content>
 	<tabTrigger>template</tabTrigger>
     <description>wxapp:tag (template)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

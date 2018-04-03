@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>switch</tabTrigger>
     <description>wxapp:tag (switch)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

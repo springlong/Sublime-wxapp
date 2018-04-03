@@ -6,5 +6,5 @@
 ]]></content>
 	<tabTrigger>viewelseif</tabTrigger>
     <description>wxapp:tag (view:elif)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

@@ -1,0 +1,220 @@
+%YAML 1.2
+---
+name: WXML
+file_extensions:
+  - wxml
+# first_line_match: '^<\?wxml '
+scope: text.wxml
+variables:
+  # This is the full WXML Name production, but should not be used where namespaces
+  # are possible. Those locations should use a qualified_name.
+  name: '[[:alpha:]:_][[:alnum:]:_.-]*'
+  # This is the form that allows a namespace prefix (ns:) followed by a local
+  # name. The captures are:
+  #  1: namespace prefix name
+  #  2: namespace prefix colon
+  #  3: local tag name
+  qualified_name: '(?:([[:alpha:]_][[:alnum:]_.-]*)(:))?([[:alpha:]_][[:alnum:]_.-]*)'
+
+contexts:
+  main:
+    - match: '(<\?)\s*({{qualified_name}})'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: entity.name.tag.wxml
+      push:
+        - meta_scope: meta.tag.preprocessor.wxml
+        - match: \?>
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - match: '\s+{{qualified_name}}(=)?'
+          captures:
+            1: entity.other.attribute-name.namespace.wxml
+            2: entity.other.attribute-name.wxml punctuation.separator.namespace.wxml
+            3: entity.other.attribute-name.localname.wxml
+            4: punctuation.separator.key-value.wxml
+        - include: double-quoted-string
+        - include: single-quoted-string
+    - match: '(<!)(DOCTYPE)(?:\s+({{name}}))?'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: keyword.doctype.wxml
+        3: variable.documentroot.wxml
+      push:
+        - meta_scope: meta.tag.sgml.doctype.wxml
+        - match: \s*(>)
+          captures:
+            1: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: internal-subset
+    - match: '<!--'
+      scope: punctuation.definition.comment.begin.wxml
+      push:
+        - meta_scope: comment.block.wxml
+        - match: '-->'
+          scope: punctuation.definition.comment.end.wxml
+          pop: true
+    - match: '(</?){{qualified_name}}([^/>\s]*)'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: entity.name.tag.namespace.wxml
+        3: entity.name.tag.wxml punctuation.separator.namespace.wxml
+        4: entity.name.tag.localname.wxml
+        5: invalid.illegal.bad-tag-name.wxml
+      push:
+        - meta_scope: meta.tag.wxml
+        - match: /?>
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: tag-stuff
+    - match: '(</?)([[:digit:].-][[:alnum:]:_.-]*)'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: invalid.illegal.bad-tag-name.wxml
+      push:
+        - meta_scope: meta.tag.wxml
+        - match: /?>
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: tag-stuff
+    - include: entity
+    - match: '<!\[CDATA\['
+      scope: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: string.unquoted.cdata.wxml
+        - match: ']]>'
+          scope: punctuation.definition.string.end.wxml
+          pop: true
+    - include: should-be-entity
+  should-be-entity:
+    - match: '&'
+      scope: invalid.illegal.bad-ampersand.wxml
+    - match: '<'
+      scope: invalid.illegal.missing-entity.wxml
+    - match: '>'
+      scope: invalid.illegal.missing-entity.wxml
+  double-quoted-string:
+    - match: '"'
+      scope: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: string.quoted.double.wxml
+        - match: '"'
+          scope: punctuation.definition.string.end.wxml
+          pop: true
+        - include: entity
+        - include: should-be-entity
+  entity:
+    - match: '(&)(?:{{name}}|#[0-9]+|#x\h+)(;)'
+      scope: constant.character.entity.wxml
+      captures:
+        1: punctuation.definition.constant.wxml
+        2: punctuation.definition.constant.wxml
+  internal-subset:
+    - match: \[
+      scope: punctuation.definition.constant.wxml
+      push:
+        - meta_scope: meta.internalsubset.wxml
+        - match: \]
+          pop: true
+        - include: entity-decl
+        - include: element-decl
+        - include: attlist-decl
+        - include: notation-decl
+        - include: parameter-entity
+  entity-decl:
+    - match: '(<!)(ENTITY)\s+(%\s+)?({{name}})(\s+(?:SYSTEM|PUBLIC)\s+)?'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: keyword.entity.wxml
+        3: punctuation.definition.entity.wxml
+        4: variable.entity.wxml
+        5: keyword.entitytype.wxml
+      push:
+        - match: '>'
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: double-quoted-string
+        - include: single-quoted-string
+  element-decl:
+    - match: '(<!)(ELEMENT)\s+({{name}})\s+'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: keyword.element.wxml
+        3: variable.element.wxml
+      push:
+        - match: '>'
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - match: '\b(EMPTY|ANY)\b'
+          scope: constant.other.wxml
+        - include: element-parens
+  element-parens:
+    - match: \(
+      scope: punctuation.definition.group.wxml
+      push:
+        - match: (\))([*?+])?
+          captures:
+            1: punctuation.definition.group.wxml
+            2: keyword.operator.wxml
+          pop: true
+        - match: '#PCDATA'
+          scope: constant.other.wxml
+        - match: '[*?+]'
+          scope: keyword.operator.wxml
+        - match: '[,|]'
+          scope: punctuation.separator.wxml
+        - include: element-parens
+  attlist-decl:
+    - match: '(<!)(ATTLIST)\s+({{name}})\s+({{name}})'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: keyword.attlist.wxml
+        3: variable.element.wxml
+        4: variable.attribute-name.wxml
+      push:
+        - match: '>'
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: double-quoted-string
+        - include: single-quoted-string
+  notation-decl:
+    - match: '(<!)(NOTATION)\s+({{name}})'
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: keyword.notation.wxml
+        3: variable.notation.wxml
+      push:
+        - match: '>'
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: double-quoted-string
+        - include: single-quoted-string
+  parameter-entity:
+    - match: '(%){{name}}(;)'
+      scope: constant.character.parameter-entity.wxml
+      captures:
+        1: punctuation.definition.constant.wxml
+        2: punctuation.definition.constant.wxml
+  single-quoted-string:
+    - match: "'"
+      scope: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: string.quoted.single.wxml
+        - match: "'"
+          scope: punctuation.definition.string.end.wxml
+          pop: true
+        - include: entity
+        - include: should-be-entity
+  tag-stuff:
+    - match: '(?:\s+|^){{qualified_name}}\s*(=)'
+      captures:
+        1: entity.other.attribute-name.namespace.wxml
+        2: entity.other.attribute-name.wxml punctuation.separator.namespace.wxml
+        3: entity.other.attribute-name.localname.wxml
+        4: punctuation.separator.key-value.wxml
+    - match: '(?:\s+|^)([[:alnum:]:_.-]+)\s*(=)'
+      captures:
+        1: invalid.illegal.bad-attribute-name.wxml
+        2: punctuation.separator.key-value.wxml
+    - include: double-quoted-string
+    - include: single-quoted-string

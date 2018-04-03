@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>inputfocus</tabTrigger>
     <description>wxapp:tag (input:focus)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

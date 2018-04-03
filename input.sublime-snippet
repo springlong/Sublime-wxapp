@@ -5,5 +5,5 @@ ${17}
 ]]></content>
 	<tabTrigger>input</tabTrigger>
     <description>wxapp:tag (input)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

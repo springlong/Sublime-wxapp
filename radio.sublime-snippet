@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>radio</tabTrigger>
     <description>wxapp:tag (radio)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>button</tabTrigger>
     <description>wxapp:tag (button)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

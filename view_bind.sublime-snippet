@@ -6,5 +6,5 @@
 ]]></content>
 	<tabTrigger>viewbind</tabTrigger>
     <description>wxapp:tag (view:bindtap)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

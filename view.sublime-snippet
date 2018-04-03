@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>view</tabTrigger>
     <description>wxapp:tag (view)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>

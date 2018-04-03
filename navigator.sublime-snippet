@@ -4,5 +4,5 @@
 ]]></content>
 	<tabTrigger>navigator</tabTrigger>
     <description>wxapp:tag (navigator)</description>
-    <scope>text.html(.wxml)</scope>
+    <scope>text.wxml</scope>
 </snippet>
