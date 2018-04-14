@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<view>${1}</view>
-]]></content>
-	<tabTrigger>view</tabTrigger>
-    <description>wxapp:tag (view)</description>
-    <scope>text.wxml</scope>
-</snippet>

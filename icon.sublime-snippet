@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<icon type="${1}" size="${2}"/>
-]]></content>
-	<tabTrigger>icon</tabTrigger>
-    <description>wxapp:tag (icon)</description>
-    <scope>text.wxml</scope>
-</snippet>

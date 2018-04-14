@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<view wx:if="{{ ${1} }}">
-	${2}
-</view>]]></content>
-	<tabTrigger>viewif</tabTrigger>
-    <description>wxapp:tag (view:if)</description>
-    <scope>text.wxml</scope>
-</snippet>
