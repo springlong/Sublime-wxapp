@@ -1,0 +1,26 @@
+{
+  "scope": "text.wxml meta.tag",
+    "completions":
+    [
+        { "trigger": "wx:for \t attr", "contents": "wx:for=\"{{${1}}}\"" },
+        { "trigger": "wx:for-index \t attr", "contents": "wx:for-index=\"${1}\"" },
+        { "trigger": "wx:for-item \t attr", "contents": "wx:for-item=\"${1}\"" },
+        { "trigger": "wx:key \t attr", "contents": "wx:key=\"${1:*this}\"" },
+        { "trigger": "wx:if \t attr", "contents": "wx:if=\"{{${1}}}\"" },
+        { "trigger": "wx:elif \t attr", "contents": "wx:elif=\"{{${1}}}\"" },
+        { "trigger": "wx:else \t attr", "contents": "wx:else" },
+        { "trigger": "class \t attr", "contents": "class=\"${1}\"" },
+        { "trigger": "id \t attr", "contents": "id=\"${1}\"" },
+        { "trigger": "is \t attr", "contents": "is=\"$1\"" },
+        { "trigger": "name \t attr", "contents": "name=\"$1\"" },
+        { "trigger": "data \t attr", "contents": "data=\"$1\"" },
+        { "trigger": "module \t attr", "contents": "module=\"$1\"" },
+        { "trigger": "src \t attr", "contents": "src=\"$1\"" },
+        { "trigger": "bindtap \t attr", "contents": "bindtap=\"$1\"" },
+        { "trigger": "open-type \t attr", "contents": "open-type=\"$1\"" },
+        { "trigger": "mode \t image-attr", "contents": "mode=\"$1\"" },
+        { "trigger": "lazy-load \t image-attr", "contents": "lazy-load=\"${1:false}\"" },
+        { "trigger": "binderror \t image-attr", "contents": "binderror=\"$1\"" },
+        { "trigger": "bindload \t image-attr", "contents": "bindload=\"$1\"" },
+    ]
+}

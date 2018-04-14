@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+wx.navigateTo({
+	url: '${1}'
+})
+]]></content>
+	<tabTrigger>wx.navigateTo</tabTrigger>
+	<description>(保留当前页面，跳转到应用内的某个页面)</description>
+	<scope>source.js</scope>
+</snippet>

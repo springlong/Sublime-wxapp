@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+wx.showToast({
+	title: '${1}',
+	icon: '${2:success}', // "success", "loading", "none"
+	duration: ${3:1500},
+	mask: ${4:false},${5:
+	success: (res) => \{
+		${6}
+	\},}${7:
+	fail: (res) => \{
+		${8}
+	\},}${9:
+	complete: (res) => \{
+		${10}
+	\}}
+})
+]]></content>
+	<tabTrigger>wx.showToast</tabTrigger>
+	<description>(显示消息提示框)</description>
+	<scope>source.js</scope>
+</snippet>

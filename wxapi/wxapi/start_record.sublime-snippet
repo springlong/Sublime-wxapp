@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+wx.startRecord({
+	success: function(res) {
+		${1:var tempFilePath = res.tempFilePath }
+	},
+	fail: function(res) {
+		${2}
+	},
+	complete: function(res) {
+		${3}
+	}
+})
+]]></content>
+	<tabTrigger>wx.startRecord</tabTrigger>
+	<description>(开始录音)</description>
+	<scope>source.js</scope>
+</snippet>

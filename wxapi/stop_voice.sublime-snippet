@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.stopVoice()
+]]></content>
+	<tabTrigger>wx.stopVoice</tabTrigger>
+    <description>(结束播放语音)</description>
+    <scope>source.js</scope>
+</snippet>

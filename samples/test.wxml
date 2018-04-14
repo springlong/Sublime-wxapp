@@ -1,0 +1,96 @@
+<!-- 导入模板 -->
+<import src="/templates/testTemp.wxml" style/>
+
+<!--index.wxml-->
+<view class="container">
+
+	<!-- 引入模板 -->
+	<include src="/templates/header.wxml" />
+
+	<view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+		<block wx:else>
+			<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view>
+
+	<!-- 事件绑定 -->
+	<view class="list-warp">
+		<view id="btnClickOuter" bindtap="bindClickButton"><button id="btnClickBtn" class="btn" bindtap="bindClickButton" data-id="less" data-do="lahah" data-age="26" data-like-this="like-this" data-wantThis="wantThis">点击按钮</button></view>
+		<button class="btn" bindtap="bindViewPage">查看二级国家馆页面</button>
+	</view>
+
+	<!-- 数据绑定 -->
+	<view class="text-list">
+		<view class="user-motto" id="test-{{id}}" wx:if="{{condition}}">{{welcome}}</view>
+		<view>{{23+35}} - {{3 > 5 ? 'a' : 'b'}} - {{obj.name}} - {{arr[0]}}asdfasdf</view>
+	</view>
+
+	<!-- 对象遍历 -->
+	<view class="text-list">
+		<text class="text-item" wx:for="{{obj}}" wx:key="*this">{{index}} - {{item}}</text>
+	</view>
+	<view class="text-list">
+		<text class="text-item" wx:for="{{obj}}" wx:for-index="idx" wx:for-item="value">{{idx}} - {{value}}</text>
+	</view>
+
+	<!-- 数组循环 -->
+	<view class="text-list">
+		<text class="text-item" wx:for="{{arr}}">{{index}} - {{item}}</text>
+	</view>
+	<view class="text-list">
+		<text class="text-item" wx:for="{{arr}}" wx:for-index="idx" wx:for-item="value">{{idx}} - {{value}}</text>
+	</view>
+
+	<!-- 循环嵌套 -->
+	<view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+		<view wx:for="{{[1,2,3,4,5,6,7,9]}}" wx:for-item="j" wx:if="{{i <= j}}">
+			{{i}} * {{j}} = {{i * j}}
+		</view>
+	</view>
+
+	<!-- 结构块的循环 -->
+	<block wx:for="{{[1,2,3]}}">
+		<view>{{index + 33 *3 }}:</view>
+		<view>{{item}}</view>
+	</block>
+
+	<!-- 条件判断 -->
+	<view class="text-list">
+		<text class="text-item" wx:if="{{type === 1}}">type:1</text>
+		<text class="text-item" wx:elif="{{type === 2}}">type:2</text>
+		<text class="text-item" wx:else>type:other</text>
+	</view>
+
+	<!-- 结构块的条件判断 -->
+	<block wx:if="{{true}}">
+		<view>view1</view>
+		<view>view2</view>
+	</block>
+
+	<!-- 模板：使用 -->
+	<template is="testTemp" data="{{...testTempA}}"></template>
+	<template is="testTemp" data="{{...testTempB}}"></template>
+	<template
+		is="{{'test' + 'Temp'}}"
+		data="{{firstName: 'test', lastName: 'data'}}">
+	</template>
+
+	<!-- wxs的使用 -->
+	<wxs src="../../wxs/test.wxs" module="test" />
+	<wxs module="m1">
+		var msg = 'hello wxs';
+		module.exports = {
+			test: 'abc',
+			message: msg,
+		}
+	</wxs>
+	<view>{{m1.test}}</view>
+	<view>{{m1.message}}</view>
+	<view>{{test.name}}</view>
+	<view>{{test.func('abc')}}</view>
+
+	<!-- 引入模板 -->
+	<include src="/templates/footer.wxml" />
+</view>

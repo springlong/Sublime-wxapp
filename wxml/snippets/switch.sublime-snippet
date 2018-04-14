@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<switch type="${1}" checked="${2:false}" bindchange="${3}"/>
+]]></content>
+	<tabTrigger>switch</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

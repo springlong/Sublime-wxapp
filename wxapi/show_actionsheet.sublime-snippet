@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+wx.showActionSheet({
+	itemList: [${1}],  // 最多6个
+	itemColor: '${2:#000000}',
+	success: (res) => {
+		// 用户点击的按钮，从上到下的顺序，从0开始
+		console.log(res.tapIndex);
+		${3}
+	},${4:
+	fail: function (res) \{
+		${5}
+	\},}${6:
+	complete: function (res) \{
+		${7}
+	\}}
+})
+]]></content>
+	<tabTrigger>wx.showActionSheet</tabTrigger>
+	<description>(显示操作菜单)</description>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+wx.getSavedFileInfo({
+	filePath: '${1}',
+	success: function(res) {
+		${2:console.log(res.size)  // 文件大小，单位B
+		console.log(res.createTime)  // 文件保存时的时间戳，从1970/01/01 08:00:00 到该时刻的秒数}
+	},
+	fail: function (res) {
+		${3}
+	},
+	complete: function (res) {
+		${4}
+	}
+})
+]]></content>
+	<tabTrigger>wx.getSavedFileInfo</tabTrigger>
+	<description>(获取本地文件的文件信息)</description>
+	<scope>source.js</scope>
+</snippet>

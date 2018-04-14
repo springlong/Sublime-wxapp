@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+wx.showLoading({
+	title: '${1}',
+	mask: ${2:false},
+	success: (res) => {
+		${3}
+	},${4:
+	fail: (res) => \{
+		${5}
+	\},}${6:
+	complete: (res) => \{
+		${7}
+	\}}
+})
+]]></content>
+	<tabTrigger>wx.showLoading</tabTrigger>
+	<description>(显示loading提示框)</description>
+	<scope>source.js</scope>
+</snippet>

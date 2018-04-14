@@ -1,0 +1,189 @@
+%YAML 1.2
+---
+
+#
+# scope说明
+# http://www.sublimetext.com/docs/3/scope_naming.html
+#
+# source - 编程语言
+# source.js - 编程语言：js
+# source.css - 编程语言：css
+#
+# text - 文本类型
+# text.html - 文本类型：html
+# text.xml - 文本类型：xml
+#
+# comment - 注释
+# comment.line - 单行注释
+# comment.block - 多行注释
+# comment.block.documentation - 作为文档使用的多行注释
+# punctuation.definition.comment.begin - 标点符号定义为：注释的开始
+# punctuation.definition.comment.end - 标点符号定义为：注释的结尾
+#
+# string - 字符串
+# string.quoted.double - 双引号字符串
+# string.quoted.single - 单引号字符串
+# punctuation.definition.string.begin - 标点符号定义为：字符串的开始
+# punctuation.definition.string.end - 标点符号定义为：字符串的结尾
+#
+# meta - 元作用域，用于范围更大的代码或标记，通常包含多个、更具体的作用域。这些不打算按照颜色方案设计，而是由首选项和插件使用。
+# meta.tag - HTML标签作用域
+# punctuation.definition.tag.begin - 标点符号定义为：标签的开始
+# punctuation.definition.tag.end - 标点符号定义为：标签的结尾
+# meta.generic - 通用数据类型结构
+# punctuation.definition.generic.begin - 标点符号定义为：通用数据类型结构的开始
+# punctuation.definition.generic.end - 标点符号定义为：通用数据类型结构的结束
+#
+# entity - 实体-通常被分配到数据结构、类型，以及代码和标记中的其他可识别的构造名称
+# entity.name.tag - 标签名称，用于HTML和XML中表示标签
+# entity.other.attribute-name - 属性名称，用于HTML、CSS和XML中表示标签的属性名
+##
+# invalid - 无效字符
+# invalid.illegal - 元素是非法的
+# invalid.deprecated - 元素是弃用的
+#
+# constant. - 常量定义
+# constant.numeric - 数字文本
+# constant.language - 语言中内置的常量，如布尔值和空值
+# constant.character.entity - 字符串中的实体
+# constant.character.escape - 字符串中的转义
+# constant.other.placeholder - 格式化占位符，诸如应用于sprintf()，%s之类的
+#
+# punctuation - 标点符号
+# punctuation.separator - 像逗号(,)和冒号(:)这样的分隔符应该使用
+# punctuation.separator.continuation - 行延续字符
+# punctuation.terminator - 分号(;)或其他语句终止符应该使用
+# punctuation.accessor - 成员访问、范围解析时使用，例如JS中的点号(.)#
+# punctuation.definition.entity - 标点符号定义为：实体
+#
+
+# 语法名称
+name: WXML
+
+# 文件扩展名
+file_extensions:
+  - wxml
+
+# 通过首行代码自动匹配
+# first_line_match: ^<\?wxml
+
+# 作用域名称
+scope: text.wxml
+
+# 变量声明
+# variables:
+
+# 上下文定义
+contexts:
+
+	# 语法入口
+  main:
+    # 语法：注释
+    - match: '<!--'
+      scope: punctuation.definition.comment.begin.wxml
+      push:
+        - meta_scope: comment.block.wxml
+        - match: '-->'
+          scope: punctuation.definition.comment.end.wxml
+          pop: true
+    # 语法：脚本
+    - match: (<)((?i:wxs))\b
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: entity.name.tag.wxml
+      push:
+        - meta_scope: meta.tag.wxml
+        - match: '/>'
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - match: '>'
+          push: Packages/JavaScript/JavaScript.sublime-syntax
+          with_prototype:
+            - match: (?=</wxs>)
+              pop: true
+        - match: (?=</wxs>)
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: tag-attributes
+    # 语法：标签
+    - match: (</?)([A-Za-z0-9:_-]+)
+      captures:
+        1: punctuation.definition.tag.begin.wxml
+        2: entity.name.tag.wxml
+      push:
+        - meta_scope: meta.tag.wxml
+        - match: /?>
+          scope: punctuation.definition.tag.end.wxml
+          pop: true
+        - include: tag-attributes
+    # 语法：{{}}
+    - include: mustache
+    # 实体标记
+    - include: entities
+    # 非法字符
+    - include: should-be-illegal
+
+  # 实体标记
+  entities:
+    - match: (&#[xX])(\h+)(;)
+      scope: constant.character.entity.hexadecimal.wxml
+      captures:
+        1: punctuation.definition.entity.wxml
+        3: punctuation.definition.entity.wxml
+    - match: (&#)([0-9]+)(;)
+      scope: constant.character.entity.decimal.wxml
+      captures:
+        1: punctuation.definition.entity.wxml
+        3: punctuation.definition.entity.wxml
+    - match: (&)([a-zA-Z0-9]+)(;)
+      scope: constant.character.entity.named.wxml
+      captures:
+        1: punctuation.definition.entity.wxml
+        3: punctuation.definition.entity.wxml
+
+  # 非法字符
+  should-be-illegal:
+    - match: <>
+      scope: invalid.illegal.incomplete.wxml
+
+  # 双引号
+  string-double-quoted:
+    - match: '"'
+      scope: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: string.quoted.double.wxml
+        - match: '"'
+          scope: punctuation.definition.string.end.wxml
+          pop: true
+        - include: entities
+        - include: mustache
+
+  # 单引号
+  string-single-quoted:
+    - match: "'"
+      scope: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: string.quoted.single.wxml
+        - match: "'"
+          scope: punctuation.definition.string.end.wxml
+          pop: true
+        - include: entities
+        - include: mustache
+
+  # 标签属性
+  tag-attributes:
+    - match: '(?:\s+|^)([A-Za-z0-9@:._-]+)'
+      captures:
+        1: entity.other.attribute-name.wxml
+    - include: string-double-quoted
+    - include: string-single-quoted
+
+  # mustache语法
+  mustache:
+    - match: '{{'
+      scope: punctuation.definition.generic.begin.wxml
+      push:
+        - meta_scope: constant.character.entity.wxml
+        - match: '}}'
+          scope: punctuation.definition.generic.end.wxml
+          pop: true

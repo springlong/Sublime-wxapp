@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+<input placeholder="${1}" auto-focus/>
+${2}
+]]></content>
+	<tabTrigger>inputautofocus</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

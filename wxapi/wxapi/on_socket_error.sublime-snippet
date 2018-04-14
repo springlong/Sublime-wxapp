@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+wx.onSocketError(function(res) {
+	${1}
+})
+]]></content>
+	<tabTrigger>wx.onSocketError</tabTrigger>
+	<description>(监听WebSocket错误)</description>
+	<scope>source.js</scope>
+</snippet>

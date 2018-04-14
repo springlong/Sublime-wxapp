@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+wx.navigateBack({
+	delta: ${1}
+})
+]]></content>
+	<tabTrigger>wx.navigateBack</tabTrigger>
+	<description>(关闭当前页面，返回上一页面或多级页面)</description>
+	<scope>source.js</scope>
+</snippet>

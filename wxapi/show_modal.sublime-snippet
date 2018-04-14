@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+wx.showModal({
+	title: '${1}',
+	content: '${2}',
+	showCancel: ${3:true},
+	cancelText: '${4:取消}',
+	cancelColor: '${5:#000000}',
+	confirmText: '${6:确定}',
+	confirmColor: '${7:#3CC51F}',
+	success: (res) => {
+		// res.confirm 为 true 时，表示用户点击了确定按钮
+		if(res.confirm) {
+			${8}
+		}
+	},${9:
+	fail: (res) => \{
+		${10}
+	\},}${11:
+	complete: (res) => \{
+		${13}
+	\}}
+})
+]]></content>
+	<tabTrigger>wx.showModal</tabTrigger>
+	<description>(显示模态弹窗)</description>
+	<scope>source.js</scope>
+</snippet>

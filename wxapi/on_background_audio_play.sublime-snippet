@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+wx.onBackgroundAudioPlay(function(res){
+	${1}
+})
+]]></content>
+	<tabTrigger>wx.onBackgroundAudioPlay</tabTrigger>
+	<description>(监听后台音乐播放)</description>
+	<scope>source.js</scope>
+</snippet>

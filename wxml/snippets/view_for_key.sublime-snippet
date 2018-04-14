@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<view wx:for="{{${1}}}" wx:for-index="${2:idx}" wx:for-item="${3:value}" wx:key="${4:*this}">
+	${5}
+</view>
+]]></content>
+	<tabTrigger>view:for:key</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

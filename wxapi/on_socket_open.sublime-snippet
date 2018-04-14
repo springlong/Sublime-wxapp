@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+wx.onSocketOpen(function(res) {
+	${1}
+})
+]]></content>
+	<tabTrigger>wx.onSocketOpen</tabTrigger>
+	<description>(监听WebSocket连接打开事件)</description>
+	<scope>source.js</scope>
+</snippet>

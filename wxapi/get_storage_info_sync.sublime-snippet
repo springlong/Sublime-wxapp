@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+try {
+	const res = wx.getStorageInfoSync()
+	${1:console.log(res.keys)  // 当前storage中所有的key
+	console.log(res.currentSize)  // 当前占用的空间大小, 单位kb
+	console.log(res.limitSize)}  // 限制的空间大小，单位kb
+} catch (e) {
+	${2:// Do something when catch error}
+}
+]]></content>
+	<tabTrigger>wx.getStorageInfoSync</tabTrigger>
+	<description>(本地缓存:相关信息-同步)</description>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<block wx:if="{{${1}}}">
+	${2}
+</block>
+]]></content>
+	<tabTrigger>block:if</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

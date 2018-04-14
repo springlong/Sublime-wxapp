@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.hideToast()
+]]></content>
+	<tabTrigger>wx.hideToast</tabTrigger>
+	<description>(隐藏消息提示框)</description>
+	<scope>source.js</scope>
+</snippet>

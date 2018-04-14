@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<canvas canvas-id="${1}" binderror="${2}" ${3:hidden}></canvas>
+]]></content>
+	<tabTrigger>canvas</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+try {
+    wx.setStorageSync('${1}', '${2}')
+} catch (e) {
+    ${3}
+}
+]]></content>
+	<tabTrigger>wx.setStorageSync</tabTrigger>
+	<description>(本地缓存添加数据-同步)</description>
+	<scope>source.js</scope>
+</snippet>

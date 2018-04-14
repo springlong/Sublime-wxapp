@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.hideNavigationBarLoading()
+]]></content>
+	<tabTrigger>wx.hideNavigationBarLoading</tabTrigger>
+	<description>(隐藏导航条加载动画)</description>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+wx.uploadFile({
+	// 必需
+	url: '${1}',
+	// 必需
+	filePath: '${2}',
+	// 必需
+	name: '${3}',
+	formData:{
+		${4}
+	},
+	header: {
+		${5}
+	},
+	success: function(res) {
+		${6}
+	},
+	fail: function(res) {
+		{7}
+	},
+	complete: function(res) {
+		${8}
+	}
+	});
+})
+]]></content>
+	<tabTrigger>wx.uploadFile</tabTrigger>
+    <description>(上传文件)</description>
+    <scope>source.js</scope>
+</snippet>

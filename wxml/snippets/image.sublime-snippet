@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<image class="${1}" src="${2}" mode="${3:scaleToFill}"></image>
+]]></content>
+	<tabTrigger>icon</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

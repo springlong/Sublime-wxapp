@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+wx.pageScrollTo({
+	scrollTop: ${1:0},
+	duration: ${2:300}
+})
+]]></content>
+	<tabTrigger>wx.pageScrollTo</tabTrigger>
+	<description>(将页面滚动到目标位置)</description>
+	<scope>source.js</scope>
+</snippet>

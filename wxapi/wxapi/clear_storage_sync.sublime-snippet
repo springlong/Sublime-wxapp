@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+try {
+    wx.clearStorageSync()
+} catch(e) {
+    ${1}
+}
+]]></content>
+	<tabTrigger>wx.clearStorageSync</tabTrigger>
+    <description>(本地缓存:清理数据-同步)</description>
+    <scope>source.js</scope>
+</snippet>

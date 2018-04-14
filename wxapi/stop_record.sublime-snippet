@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+wx.stopRecord()
+]]></content>
+	<tabTrigger>wx.stopRecord</tabTrigger>
+    <description>(​主动调用停止录音)</description>
+    <scope>source.js</scope>
+</snippet>

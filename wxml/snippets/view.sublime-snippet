@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<view>${1}</view>
+]]></content>
+	<tabTrigger>view</tabTrigger>
+	<description>tag</description>
+	<scope>text.wxml</scope>
+</snippet>

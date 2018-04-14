@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+wx.seekBackgroundAudio({
+	position: ${1:30},
+	success: function(res) {
+		${2}
+	},
+	fail: function(res) {
+		${3}
+	},
+	complete: function(res) {
+		${4}
+	}
+})
+]]></content>
+	<tabTrigger>wx.seekBackgroundAudio</tabTrigger>
+	<description>(控制音乐播放进度)</description>
+	<scope>source.js</scope>
+</snippet>

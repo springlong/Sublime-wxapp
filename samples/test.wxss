@@ -1,0 +1,33 @@
+@import "../../../common.wxss";
+
+page {
+	background-color: #F3F3F3;
+}
+
+.logistics-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 33rpx 30rpx 40rpx;
+	margin-top: 20rpx;
+	background-color: #fff;
+}
+
+.logistics-cont {
+	width: 555rpx;
+}
+
+.logistics-cont-desc {
+	font-size: 28rpx;
+	line-height: 42rpx;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.logistics-cont-time {
+	margin-top: 23rpx;
+	font-size: 24rpx;
+	line-height: 1;
+	color: #777;
+}
