@@ -15,10 +15,10 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 ```js
 "auto_complete_triggers":
 [
-	{
-		"characters": "abcdefghijklmnopqrstuvwxyz",
-		"selector": "text.wxml"
-	}
+  {
+    "characters": "abcdefghijklmnopqrstuvwxyz",
+    "selector": "text.wxml"
+  }
 ],
 ```
 
@@ -47,4 +47,4 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 1. wxss文件的语法高亮，目前是将其设置为css语法，rpx单位和内部组件标签无法高亮显示。
 2. 微信内组件的代码提示和自动补全还不是很全，但是基本的需求够用。
 3. 微信API的代码提示和自动补全也不是很全，但基本的也够用。
-4. 有任何需求和疑问，欢迎提交[issues](./issues)
+4. 有任何需求和疑问，欢迎提交[issues](https://github.com/springlong/Sublime-wxapp/issues)
