@@ -4,13 +4,13 @@ wx.playBackgroundAudio({
 	dataUrl: '${1}',
 	title: '${2}',
 	coverImgUrl: '${3}',
-	success: function(res) {
+	success: (res) => {
 		${4}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${5}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${6}
 	}
 })

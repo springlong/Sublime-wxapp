@@ -6,13 +6,13 @@ wx.openLocation({
 	scale: ${3:'INT类型，缩放比例，范围5~18，默认为18'},
 	name: ${4:'位置名'},
 	address: ${5:'地址的详细说明'},
-	success: function (res) {
+	success: (res) => {
 		${6}
 	},
-	fail: function (res) {
+	fail: (res) => {
 		${7}
 	},
-	complete: function (res) {
+	complete: (res) => {
 		${8}
 	}
 })

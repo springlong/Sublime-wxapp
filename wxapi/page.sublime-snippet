@@ -1,30 +1,82 @@
 <snippet>
 	<content><![CDATA[
 Page({
+	/**
+	 * 页面的初始数据
+	 */
 	data:{
-		${1}
+		$1
 	},
-	onLoad:function (options) {
-		${2}
+
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
+	onLoad: function (options) {
+		$2
 	},
-	onReady: function() {
-		${3}
+
+	/**
+	 * 生命周期函数--监听页面初次渲染完成
+	 */
+	onReady: function () {
+
 	},
-	onShow: function() {
-		${4}
+
+	/**
+	 * 生命周期函数--监听页面显示
+	 */
+	onShow: function () {
+
 	},
-	onHide: function() {
-		${5}
+
+	/**
+	 * 生命周期函数--监听页面隐藏
+	 */
+	onHide: function () {
+
 	},
-	onUnload: function() {
-		${6}
+
+	/**
+	 * 生命周期函数--监听页面卸载
+	 */
+	onUnload: function () {
+
 	},
-	onPullDownRefresh: function() {
-		${7}
+
+	/**
+	 * 页面相关事件处理函数--监听用户下拉动作
+	 */
+	onPullDownRefresh: function () {
+
 	},
-	onReachBottom: function() {
-		${8}
-	}
+
+	/**
+	 * 页面上拉触底事件的处理函数
+	 */
+	onReachBottom: function () {
+
+	},
+
+	/**
+	 * 用户点击右上角转发
+	 */
+	onShareAppMessage: function () {
+
+	},
+
+	/**
+	 * 页面滚动触发事件的处理函数
+	 */
+	onPageScroll: function () {
+
+	},
+
+	/**
+	 * 当前是 tab 页时，点击 tab 时触发
+	 */
+	onTabItemTap: function(item) {
+
+	},
 })
 ]]></content>
 	<tabTrigger>page</tabTrigger>

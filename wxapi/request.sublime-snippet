@@ -9,13 +9,13 @@ wx.request({
 	header: {
 		${3:'Content-Type': 'application/json'}
 	},
-	success: function(res) {
+	success: (res) => {
 		${4}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${5}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${6}
 	}
 })

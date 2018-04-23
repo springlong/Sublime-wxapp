@@ -6,13 +6,13 @@ wx.connectSocket({
 		${2}
 	},
 	method: "${3}",
-	success: function(res) {
+	success: (res) => {
 		${4}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${5}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${6}
 	}
 })

@@ -5,14 +5,14 @@ wx.downloadFile({
 	header: {
 		${2}
 	},
-	success: function(res) {
+	success: (res) => {
 		${3:console.log(res.tempFilePath)  // 临时文件路径，下载后的文件会存储到一个临时文件
 		console.log(res.statusCode)  // 开发者服务器返回的 HTTP 状态码}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${4}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${5}
 	}
 })

@@ -3,13 +3,13 @@
 wx.previewImage({
 	current: '${1}', // 当前显示图片的http链接
 	urls: [${2}], // 需要预览的图片http链接列表
-	success: function(res) {
+	success: (res) => {
 		${3}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${4}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${5}
 	}
 })

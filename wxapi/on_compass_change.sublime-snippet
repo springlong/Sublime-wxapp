@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-wx.onCompassChange(function (res) {
+wx.onCompassChange((res) => {
 	${1:console.log(res.direction)}
 })
 ]]></content>

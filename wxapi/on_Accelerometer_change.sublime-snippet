@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-wx.onAccelerometerChange(function(res) {
+wx.onAccelerometerChange((res) => {
 	${1:console.log(res.x)  // x轴
 	console.log(res.y)  // y轴
 	console.log(res.z)  // z轴}

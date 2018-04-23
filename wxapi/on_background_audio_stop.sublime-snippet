@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-wx.onBackgroundAudioStop(function(res){
+wx.onBackgroundAudioStop((res) => {
 	${1}
 })
 ]]></content>

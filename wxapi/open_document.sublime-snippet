@@ -2,13 +2,13 @@
 	<content><![CDATA[
 wx.openDocument({
 	filePath: '${1}',
-	success: function(res) {
+	success: (res) => {
 		${2}
 	},
-	fail: function (res) {
+	fail: (res) => {
 		${3}
 	},
-	complete: function (res) {
+	complete: (res) => {
 		${4}
 	}
 })

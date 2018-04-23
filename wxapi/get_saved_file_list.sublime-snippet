@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
 wx.getSavedFileList({
-	success: function (res) {
+	success: (res) => {
 		${1:console.log(res.fileList)}
 	},
-	fail: function (res) {
+	fail: (res) => {
 		${2}
 	},
-	complete: function (res) {
+	complete: (res) => {
 		${3}
 	}
 })

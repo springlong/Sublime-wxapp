@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
 wx.getSystemInfo({
-	success: function(res) {
+	success: (res) => {
 		${1:let brand = res.brand  // 手机品牌
 		let model = res.model  // 手机型号
 		let pixelRatio = res.pixelRatio  // 设备像素比
@@ -14,10 +14,10 @@ wx.getSystemInfo({
 		let system = res.system  // 操作系统版本
 		let platform = res.platform  // 客户端平台}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${2}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${3}
 	}
 })

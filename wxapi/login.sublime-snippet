@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
 wx.login({
-	success: function(res) {
+	success: (res) => {
 		${1}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${2}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${3}
 	}
 })

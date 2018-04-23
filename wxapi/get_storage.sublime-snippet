@@ -2,13 +2,13 @@
 	<content><![CDATA[
 wx.getStorage({
 	key: '${1}',
-	success: function(res) {
+	success: (res) => {
 		${2:console.log(res.data)}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${3}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${4}
 	}
 });

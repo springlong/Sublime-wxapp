@@ -4,17 +4,17 @@ wx.chooseVideo({
 	sourceType: ${1:['album', 'camera']},
 	maxDuration: ${2:60},
 	camera: ${3:['front','back']},
-	success: function(res) {
+	success: (res) => {
 		${4:let tempFilePath = res.tempFilePath  // 选定视频的临时文件路径
 		let duration = res.duration  // 选定视频的时间长度
 		let size = res.size  // 选定视频的数据量大小
 		let height = res.height  // 返回选定视频的长
 		let weight = res.weight  // 返回选定视频的宽}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${5}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${6}
 	}
 })

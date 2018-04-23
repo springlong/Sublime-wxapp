@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-wx.onSocketError(function(res) {
+wx.onSocketError((res) => {
 	${1}
 })
 ]]></content>

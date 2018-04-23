@@ -3,13 +3,13 @@
 wx.playVoice({
 	filePath: '${1:tempFilePath}',
 	${2:duration: 60,}
-	success: function(res) {
+	success: (res) => {
 		${3}
 	},
-	fail: function(res) {
+	fail: (res) => {
 		${4}
 	},
-	complete: function(res) {
+	complete: (res) => {
 		${5}
 	}
 })
