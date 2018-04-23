@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<slider bindchange="${1}" min="${2}" max="${3}" ${5:show-value} step=${6:1} ${7:disabled="${8:false}"} value="${9}"/>
-]]></content>
-	<tabTrigger>slider</tabTrigger>
-	<description>tag</description>
-	<scope>text.wxml</scope>
-</snippet>

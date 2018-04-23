@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-wx.hideLoading()
-]]></content>
-	<tabTrigger>wx.hideLoading</tabTrigger>
-	<description>(隐藏 loading 提示框)</description>
-	<scope>source.js</scope>
-</snippet>

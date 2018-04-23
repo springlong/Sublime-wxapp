@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<view class="${1}">${2}</view>
-]]></content>
-	<tabTrigger>view:class:line</tabTrigger>
-	<description>tag</description>
-	<scope>text.wxml</scope>
-</snippet>
