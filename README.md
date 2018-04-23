@@ -22,7 +22,7 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 ],
 ```
 
-![](assets/images/sublime-settings.png)
+![](assets/images/sublime-setting.png)
 
 ## 插件功能1：wxml文件的语法高亮
 
