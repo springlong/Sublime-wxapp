@@ -2,13 +2,27 @@
 
 Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
-微信开发者工具的编辑器虽然自带代码提示功能，但是就其编码体验和主题选择，个人觉得还是不太好用。而VS Code虽然有完善的小程序插件，而且挺好用，功能齐全，但是个人还是更偏向于简洁的Sublime Text。所以还是想在自己熟悉的Sublime Text3上进行代码的编写工作，于是带着学习的目的，诞生了这款Sublime Text的微信小程序语法高亮、代码提示插件。
+微信开发者工具的编辑器虽然自带代码提示功能，但是就其编码体验和主题选择，个人觉得还是不太好用。
+
+而VS Code虽然有完善的小程序插件，而且挺好用，功能齐全，但是个人还是更偏向于简洁的Sublime Text。
+
+所以还是想在自己熟悉的Sublime Text3上进行代码的编写工作，于是带着学习的目的，诞生了这款Sublime Text的微信小程序语法高亮、代码提示插件。
 
 ## 安装
 
-目前该插件还未完善，没有提交到Package Control。
+- Package Control
 
-目前使用该插件，需要下载zip包，将其解压到Sublime的插件安装目录。
+打开命令行面板, 输入 `pci`, 搜索 `Sublime-wxapp`。
+
+- Git
+
+用git克隆到Sublime的插件安装目录。
+
+- Zip
+
+下载zip包，将其解压到Sublime的插件安装目录。
+
+## 设置
 
 为了提高wxml的补全效率，需要选择菜单(Preferences > Settings)，在打开的Preferences.sublime-settings用户配置文件中加入下面的代码：
 
