@@ -211,7 +211,7 @@ class TagCompletions(sublime_plugin.EventListener):
             if c == '<':
                 tag = line_head[i + 1:space_index]
                 break
-            elif c == ' ':
+            elif c == ' ' or c == '\t' or c == '\n':
                 space_index = i
             i -= 1
 
@@ -222,7 +222,9 @@ class TagCompletions(sublime_plugin.EventListener):
         while i >= 0:
             c = line_head[i]
             if c == ' ' or c == '\t' or c == '\n':
-                exist_attr.append(line_head[i + 1:space_index])
+                attr_value = line_head[i + 1:space_index]
+                if attr_value != '':
+                    exist_attr.append(attr_value)
                 space_index = i
             elif c == '<':
                 break
@@ -230,6 +232,11 @@ class TagCompletions(sublime_plugin.EventListener):
                 space_index = i
             i -= 1
         attr = exist_attr[0]
+
+        # 打印测试
+        # print('tag', tag, '____end')
+        # print('exist_attr', exist_attr)
+        # print('attr', attr)
 
         # 检测标签的有效性
         # isalnum() 是否由字母和数字组成
@@ -246,11 +253,6 @@ class TagCompletions(sublime_plugin.EventListener):
             elif c == '<':
                 # 发现了另一个打开的标签，则需要将当前标签结束
                 break
-
-        # 打印测试
-        # print('tag', tag)
-        # print('exist_attr', exist_attr)
-        # print('attr', attr)
 
         # 属性值的completion列表
         if ch == '"':
