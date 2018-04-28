@@ -116,7 +116,7 @@ class TagCompletions(sublime_plugin.EventListener):
         completion_list = []
 
         # 打印测试
-        # print('get_completions:', (prefix, locations, is_inside_tag, ch))
+        # print('get_completions:', {'prefix':prefix, 'locations':locations, 'is_inside_tag':is_inside_tag, 'ch':ch})
 
         # 如果不在标签作用域下
         # 优先匹配 tag.class 和 tag#id 模式
@@ -202,6 +202,12 @@ class TagCompletions(sublime_plugin.EventListener):
         # 标签当前位置之后的字符
         line_tail = line[pt - search_start:]
 
+        # 已存在的属性列表
+        exist_attr = []
+
+        # 当前键入的属性名称
+        attr = ''
+
         # 找到距离当前输入位置最近的标签名
         i = len(line_head) - 1
         tag = None
@@ -215,9 +221,8 @@ class TagCompletions(sublime_plugin.EventListener):
                 space_index = i
             i -= 1
 
-        # 找到距离当前输入位置最近的属性名
+        # 找到当前tag当前位置之前已经键入的attr列表
         i = len(line_head) - 1
-        exist_attr = []
         space_index = len(line_head)
         while i >= 0:
             c = line_head[i]
@@ -231,7 +236,26 @@ class TagCompletions(sublime_plugin.EventListener):
             elif c == '=':
                 space_index = i
             i -= 1
-        attr = exist_attr[0]
+
+        # 找到当前tag当前位置之后已经键入的attr列表
+        i = 0
+        space_index = 0
+        while i < len(line_tail):
+            c = line_tail[i]
+            if c == ' ' or c == '\t' or c == '\n':
+                space_index = i
+            elif c == '>':
+                break
+            elif c == '=':
+                attr_value = line_tail[space_index+1:i]
+                if attr_value != '':
+                    exist_attr.append(attr_value)
+                space_index = i
+            i += 1
+
+        # 这里如果没有成员，取索引0会报错
+        if len(exist_attr) > 0:
+            attr = exist_attr[0]
 
         # 打印测试
         # print('tag', tag, '____end')
