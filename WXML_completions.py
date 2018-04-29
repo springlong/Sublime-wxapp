@@ -128,7 +128,7 @@ class TagCompletions(sublime_plugin.EventListener):
         # 如果在标签作用域下，且不以<开头
         # 则匹配标签属性
         if is_inside_tag and ch != '<':
-            if ch in [' ', '"', '\t', '\n']:
+            if ch in [' ', '"', '\t', '\n', ':', '.']:
                 completion_list = self.get_attribute_completions(view, locations, prefix, ch)
             return (completion_list, sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
 
@@ -244,7 +244,7 @@ class TagCompletions(sublime_plugin.EventListener):
             c = line_tail[i]
             if c == ' ' or c == '\t' or c == '\n':
                 space_index = i
-            elif c == '>':
+            elif c == '>' or c == '<':
                 break
             elif c == '=':
                 attr_value = line_tail[space_index+1:i]
@@ -263,8 +263,7 @@ class TagCompletions(sublime_plugin.EventListener):
         # print('attr', attr)
 
         # 检测标签的有效性
-        # isalnum() 是否由字母和数字组成
-        if not tag or not tag.isalnum():
+        if not tag:
             return []
 
         # 如果标签没有结束，则自动加上>符号
@@ -291,20 +290,67 @@ class TagCompletions(sublime_plugin.EventListener):
          # 属性名称的completion列表
          # 如果在字符串作用下则不输出
         elif not view.match_selector(locations[0], "text.wxml string.quoted"):
-            attr_list = setting_cache.tag_data.get(tag, {}).get('attrs', [])
-            attr_list = [(item.get('name', '')) for item in attr_list]
-            attr_list.extend(setting_cache.global_attributes)
+            attr_data = {}
+            attr_list = []
+            attr_list.extend(setting_cache.tag_data.get(tag, {}).get('attrs', []))
+
+            # 按键值对记录数据
+            for item in attr_list:
+                attr_data.setdefault(item.get('name', ''), item)
+
+            # 合并公共属性
+            for item in setting_cache.global_attributes:
+                # 直接是一个字典
+                if str(type(item)).find('dict') >= 0:
+                    attr_list.append(item)
+                    attr_data.setdefault(item.get('name', ''), item)
+                # 还可以是字符串
+                else:
+                    attr_list.append({"name": item, "type": "string", "def": "", "desc": ""})
+                    attr_data.setdefault(item, {"name": item, "type": "string", "def": "", "desc": ""})
+
+            attr_name_list = [(item.get('name', '')) for item in attr_list]
             attr_completions = []
+
+            # 如果为冒号，则需要对属性列表进行过滤
+            temp_list = []
+            if ch == ':' or ch == '.':
+                for name in attr_name_list:
+                    match_result = name.find(attr) >= 0
+                    if match_result:
+                        temp_list.append(name.replace(attr, ''))
+                attr_name_list = temp_list
 
             # 将已存在属性移除
             for name in exist_attr:
                 try:
                     # 如果list中不存在值，将报错
-                    attr_list.remove(name)
+                    attr_name_list.remove(name)
                 except ValueError:
                     test = ''
 
             # 生成最终的属性列表
-            for name in attr_list:
-                attr_completions.append((name + '\tAttr', name + '="$1"' + suffix))
+            for name in attr_name_list:
+                if suffix == '>':
+                    attr_completions.append((name + '\tAttr', name + '="$1"$2' + suffix))
+                else:
+                    attr_completions.append((name + '\tAttr', name + '="$1"'))
             return attr_completions
+
+    # def matchByFuzzy(self, cont, fuzzy):
+    #     # 模糊匹配
+    #     reStr = ''
+    #     for char in fuzzy:
+    #         if char == '.':
+    #             reStr += '\.' + '.*'
+    #         else:
+    #             reStr += char + '.*'
+
+    #     rex = re.compile(reStr)
+    #     result = match(rex, cont)
+
+    #     if not result:
+    #         return False
+    #     else:
+    #         return True
+

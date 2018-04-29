@@ -26,7 +26,7 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 "auto_complete_triggers":
 [
   {
-    "characters": "abcdefghijklmnopqrstuvwxyz ",
+    "characters": "abcdefghijklmnopqrstuvwxyz< :.",
     "selector": "text.wxml"
   }
 ],
