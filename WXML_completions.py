@@ -314,11 +314,14 @@ class TagCompletions(sublime_plugin.EventListener):
 
             # 如果为冒号，则需要对属性列表进行过滤
             temp_list = []
+            temp_obj = {}
             if ch == ':' or ch == '.':
                 for name in attr_name_list:
                     match_result = name.find(attr) >= 0
                     if match_result:
-                        temp_list.append(name.replace(attr, ''))
+                        simple_attr = name.replace(attr, '')
+                        temp_obj.setdefault(simple_attr, name)
+                        temp_list.append(simple_attr)
                 attr_name_list = temp_list
 
             # 将已存在属性移除
@@ -331,10 +334,38 @@ class TagCompletions(sublime_plugin.EventListener):
 
             # 生成最终的属性列表
             for name in attr_name_list:
+                # 由于可能通过冒号或者点号进行了过滤，
+                # 所以需要得出原配置列表的属性名称,
+                # 并得出属性的相关数据。
+                attr_name = name
+                if temp_obj.get(name, False):
+                    attr_name = temp_obj.get(name, '')
+                attr_item = attr_data.get(attr_name, {})
+
+                #获取属性数据
+                type_value = attr_item.get('type', 'string')
+                desc_value = attr_item.get('desc', '')
+                def_value = attr_item.get('def', '')
+
+                comp_name = name + '\tAttr'
+                comp_value = name + '="${1:' + def_value + '}"'
+
+                # 不同属性值类型，输出不一样的补全方案
+                if type_value == 'mustache':
+                    comp_value = name + '="{{$1}}"'
+                elif type_value == 'prop':
+                    comp_value = name
+                elif type_value == 'boolean':
+                    if def_value == 'false':
+                        comp_value = name
+                    else:
+                        comp_value = name + '="{{' + '${1:false}' + '}}"'
+
                 if suffix == '>':
-                    attr_completions.append((name + '\tAttr', name + '="$1"$2' + suffix))
-                else:
-                    attr_completions.append((name + '\tAttr', name + '="$1"'))
+                    comp_value += '$2' + suffix
+
+                attr_completions.append((comp_name, comp_value))
+
             return attr_completions
 
     # def matchByFuzzy(self, cont, fuzzy):

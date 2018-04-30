@@ -40,7 +40,7 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
 1： 自动识别wxs标签，内部使用JavaScript语法高亮和代码提示。
 
-2： Mustache语法高亮显示，用于区分其他常规属性值和文本内容。
+2： Mustache语法等表示JS操作的属性值均高亮显示，用于区分其他常规属性值和文本内容。
 
 ![](assets/images/wxml-syntax-highlight.png)
 
@@ -58,7 +58,7 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
 ## 插件功能3：微信内置组件的代码提示和自动补全
 
-基本的标签补全和属性提示都以实现，具体功能点如下：
+基本的标签补全和属性提示都已实现，具体功能点如下：
 
 1： 标签的自动补全，并为常用标签添加辅助输入：`view:if`、`view:for`、`view:class` 等。
 
@@ -68,9 +68,13 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
 ![](assets/images/wxml-complete-2.gif)
 
-3: 标签属性以及属性值的自动提示和补全。
+3: 标签属性以及属性值的自动提示和补全，将根据属性值的类型补全不一样的内容。
 
 ![](assets/images/wxml-complete-3.gif)
+
+4: 标签属性支持冒号(:)匹配。
+
+![](assets/images/wxml-complete-4.gif)
 
 ## 插件功能4：微信API的代码提示和自动补全
 
