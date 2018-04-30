@@ -146,6 +146,23 @@ contexts:
     - match: <>
       scope: invalid.illegal.incomplete.wxml
 
+  # 标签属性
+  tag-attributes:
+    - match: '(?:\s+|^)(bind[A-Za-z0-9:_-]+|catch[A-Za-z0-9:_-]+||capture-bind[A-Za-z0-9:_-]+|capture-catch[A-Za-z0-9:_-]+|wx:for-index|wx:for-item|wx:key)(=")'
+      captures:
+        1: entity.other.attribute-name.wxml
+        2: punctuation.definition.string.begin.wxml
+      push:
+        - meta_scope: constant.character.entity.wxml
+        - match: '"'
+          scope: punctuation.definition.generic.end.wxml
+          pop: true
+    - match: '(?:\s+|^)([A-Za-z0-9@:._-]+)'
+      captures:
+        1: entity.other.attribute-name.wxml
+    - include: string-double-quoted
+    - include: string-single-quoted
+
   # 双引号
   string-double-quoted:
     - match: '"'
@@ -169,14 +186,6 @@ contexts:
           pop: true
         - include: entities
         - include: mustache
-
-  # 标签属性
-  tag-attributes:
-    - match: '(?:\s+|^)([A-Za-z0-9@:._-]+)'
-      captures:
-        1: entity.other.attribute-name.wxml
-    - include: string-double-quoted
-    - include: string-single-quoted
 
   # mustache语法
   mustache:
