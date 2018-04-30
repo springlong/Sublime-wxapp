@@ -128,7 +128,7 @@ class TagCompletions(sublime_plugin.EventListener):
         # 如果在标签作用域下，且不以<开头
         # 则匹配标签属性
         if is_inside_tag and ch != '<':
-            if ch in [' ', '"', '\t', '\n', ':', '.']:
+            if ch in [' ', '"', '\t', '\n', ':', '.', '@']:
                 completion_list = self.get_attribute_completions(view, locations, prefix, ch)
             return (completion_list, sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
 
@@ -315,9 +315,9 @@ class TagCompletions(sublime_plugin.EventListener):
             # 如果为冒号，则需要对属性列表进行过滤
             temp_list = []
             temp_obj = {}
-            if ch == ':' or ch == '.':
+            if ch == ':' or ch == '.' or ch == '@':
                 for name in attr_name_list:
-                    match_result = name.find(attr) >= 0
+                    match_result = name.find(attr) == 0
                     if match_result:
                         simple_attr = name.replace(attr, '')
                         temp_obj.setdefault(simple_attr, name)
