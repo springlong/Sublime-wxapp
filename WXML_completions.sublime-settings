@@ -15,7 +15,7 @@
         ["view:for\tTag", "view wx:for=\"{{$1}}\">$0</view>"],
         ["view:for:for\tTag", "view wx:for=\"{{$1}}\" wx:for-index=\"${2:idx}\" wx:for-item=\"${3:item}\">$4</view>"],
         ["view:for:key\tTag", "view wx:for=\"{{$1}}\" wx:for-index=\"${2:idx}\" wx:for-item=\"${3:item}\" wx:key=\"${4:*this}\">$5</view>"],
-        ["text:class\tTag", "view class=\"$1\">$0</text>"],
+        ["text:class\tTag", "text class=\"$1\">$0</text>"],
         ["image\tTag", "image class=\"$1\" src=\"$2\"${3: mode=\"${4:scaleToFill}\"}></image>"],
         ["navigator\tTag", "navigator class=\"$1\" url=\"$2\"${3: open-type=\"${4:navigate}\"}>$0</navigator>"],
         ["include\tTag", "include src=\"${1}\"/>"],
