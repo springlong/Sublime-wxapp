@@ -9,11 +9,11 @@ Sublime Text 3 syntax highlighting and auto completion for `.wxml` file(WeChat '
 
 - Git
 
-Git clone this repository to Sublime Packages Path
+Git clone this repository to Sublime Packages Path.
 
 - Zip
 
-Download zip and unzip to Sublime Packages Path
+Download zip and unzip to Sublime Packages Path.
 
 ## Setting
 
