@@ -18,6 +18,9 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
 下载zip包，将其解压到Sublime的插件安装目录。
 
+Windows下的安装目录，可以从Sublime的菜单中依次选择：Preferences > Browse Packages 到达。
+Mac下的安装目录，可以从Sublime的菜单中依次选择：Sublime Text > Preferences > Browse Packages 到达。
+
 ## 设置
 
 为了提高wxml的补全效率，需要选择菜单(Preferences > Settings)，在打开的Preferences.sublime-settings用户配置文件中加入下面的代码：
