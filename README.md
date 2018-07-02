@@ -1,4 +1,4 @@
-English | [简体中文](./docs/README.zh-cn.md)
+English | [简体中文](./docs/README.zh-ch.md)
 
 
 # Sublime-wxapp
