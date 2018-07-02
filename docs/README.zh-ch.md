@@ -36,7 +36,7 @@ Mac下的安装目录，可以从Sublime的菜单中依次选择：Sublime Text 
 ],
 ```
 
-![](assets/images/sublime-setting.png)
+![](../assets/images/sublime-setting.png)
 
 ## 插件功能1：wxml文件的语法高亮
 
@@ -46,7 +46,7 @@ Mac下的安装目录，可以从Sublime的菜单中依次选择：Sublime Text 
 
 2： Mustache语法等表示JS操作的属性值均高亮显示，用于区分其他常规属性值和文本内容。
 
-![](assets/images/wxml-syntax-highlight.png)
+![](../assets/images/wxml-syntax-highlight.png)
 
 ## 插件功能2：wxss文件的语法高亮
 
@@ -58,7 +58,7 @@ Mac下的安装目录，可以从Sublime的菜单中依次选择：Sublime Text 
 
 这样也方便共用css原有的代码提示和补全。
 
-![](assets/images/wxss-syntax-highlight.png)
+![](../assets/images/wxss-syntax-highlight.png)
 
 ## 插件功能3：微信内置组件的代码提示和自动补全
 
@@ -66,25 +66,25 @@ Mac下的安装目录，可以从Sublime的菜单中依次选择：Sublime Text 
 
 1： 标签的自动补全，并为常用标签添加辅助输入：`view:if`、`view:for`、`view:class` 等。
 
-![](assets/images/wxml-complete-1.gif)
+![](../assets/images/wxml-complete-1.gif)
 
 2: 通过 `view.class` 和 `view#id` 快速输入类名和id属性。
 
-![](assets/images/wxml-complete-2.gif)
+![](../assets/images/wxml-complete-2.gif)
 
 3: 标签属性以及属性值的自动提示和补全，将根据属性值的类型补全不一样的内容。
 
-![](assets/images/wxml-complete-3.gif)
+![](../assets/images/wxml-complete-3.gif)
 
 4: 标签属性支持冒号(:)匹配。
 
-![](assets/images/wxml-complete-4.gif)
+![](../assets/images/wxml-complete-4.gif)
 
 ## 插件功能4：微信API的代码提示和自动补全
 
 微信API的提示，统一通过 `wx` 前缀触发，输入期间不支持 `.` 匹配。
 
-![](assets/images/wxapp-api.gif)
+![](../assets/images/wxapp-api.gif)
 
 ## 后续
 
