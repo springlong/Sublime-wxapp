@@ -10,6 +10,10 @@ Sublime Text 3 微信小程序语法高亮、代码提示插件！
 
 ## 安装
 
+- Package Control
+
+通过 Package Control: Install Package 搜索 `Sublime wxapp` 进行安装。
+
 - Git
 
 用git克隆到Sublime的插件安装目录。

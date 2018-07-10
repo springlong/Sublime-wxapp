@@ -7,6 +7,10 @@ Sublime Text 3 syntax highlighting and auto completion for `.wxml` file(WeChat '
 
 ## Install
 
+- Package Control
+
+Search `Sublime wxapp` via Package Control: Install Package
+
 - Git
 
 Git clone this repository to Sublime Packages Path.
