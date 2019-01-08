@@ -63,6 +63,7 @@ In order to improve WXML completion efficiency,you shuld edit your Preferences.s
 
 ![](assets/images/wxml-complete-4.gif)
 
+
 ### WeChat 'mini apps' apis auto completion
 
 ![](assets/images/wxapp-api.gif)
